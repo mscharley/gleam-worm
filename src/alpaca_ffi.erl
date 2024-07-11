@@ -6,7 +6,7 @@
 persist(Gen) ->
 	{ _, GenModule } = erlang:fun_info(Gen, module),
 	{ _, GenName } = erlang:fun_info(Gen, name),
-	Name = ["alpaca", GenModule, GenName],
+	Name = { ?MODULE, GenModule, GenName },
 	case catch persistent_term:get(Name) of
 		{ 'EXIT', { badarg, _ } } -> 
 			Value = Gen(),
