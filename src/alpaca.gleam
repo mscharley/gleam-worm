@@ -18,7 +18,7 @@
 ////   approach as much as reasonable.
 ////
 //// * Erlang has a 1GB limit on storage in this cache by default. This is [configurable when starting an application](https://www.erlang.org/doc/apps/erts/persistent_term.html#module-storing-huge-persistent-terms),
-////   however beware of this limit when using this in a library. Caching large amounts of data in alpaca is
+////   however beware of this limit when using alpaca in a library. Caching large amounts of data in alpaca is
 ////   probably the wrong solution.
 
 /// Persist the result of a callback.
