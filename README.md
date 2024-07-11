@@ -28,8 +28,6 @@ pub fn main() {
 
 While this library was initial concieved of as a cache for regex compilation, it can be used for any deterministic calculation which you only want to run once and reuse many times.
 
-If you are using this in a library then it is recommended to stick to one big cache for your library wherever possible. The [`persistent_term`][persistent_term] package used to facilitate the cache on the Erlang target gets slower the more individual terms are stored. Hence, a single large object stored in a single term and destructured in Gleam is the preferred approach as much as reasonable.
-
-API documentation can be found at <https://hexdocs.pm/alpaca>.
+Please read the documentation before using this library as it is not the best solution for many situations. API documentation can be found at <https://hexdocs.pm/alpaca/alpaca.html>.
 
 [persistent_term]: https://www.erlang.org/doc/apps/erts/persistent_term.html
