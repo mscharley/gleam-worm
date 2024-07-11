@@ -12,7 +12,7 @@ fn random_int() {
 }
 
 fn cached_int() {
-  use <- alpaca.persist("random_int")
+  use <- alpaca.persist()
   random_int()
 }
 
@@ -20,6 +20,5 @@ pub fn simple_test() {
   let n = cached_int()
   let m = cached_int()
 
-  n
-  |> should.equal(m)
+  n |> should.equal(m)
 }

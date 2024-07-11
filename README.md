@@ -15,7 +15,7 @@ pub type RegexCache {
 }
 
 fn regexes() -> RegexCache {
-  use <- alpaca.persist("my_app")
+  use <- alpaca.persist()
   RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
 }
 

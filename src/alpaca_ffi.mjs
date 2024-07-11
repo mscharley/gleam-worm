@@ -5,11 +5,12 @@ import {
 
 const cache = new Map();
 
-export function persist(name, gen) {
-	let value = cache.get(name)
+export function persist(gen) {
+	let key = gen.toString();
+	let value = cache.get(key);
 	if (value === undefined) {
 		value = gen();
-		cache.set(name, value);
+		cache.set(key, value);
 	}
 
 	return value;

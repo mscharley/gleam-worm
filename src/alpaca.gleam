@@ -14,10 +14,10 @@
 /// }
 ///
 /// fn regexes() -> RegexCache {
-///   use <- alpaca.persist("my_app")
+///   use <- alpaca.persist()
 ///   RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
 /// }
 /// ```
 @external(erlang, "alpaca_ffi", "persist")
 @external(javascript, "./alpaca_ffi.mjs", "persist")
-pub fn persist(name: String, generator: fn() -> a) -> a
+pub fn persist(generator: fn() -> a) -> a
