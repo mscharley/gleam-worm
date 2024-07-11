@@ -1,8 +1,8 @@
-name = "elephant"
+name = "alpaca"
 version = "1.0.0"
 description = "A library for caching deterministic calculations in Gleam"
 licences = ["MIT"]
-repository = { type = "github", user = "mscharley", repo = "elephant" }
+repository = { type = "github", user = "mscharley", repo = "alpaca" }
 
 # Fill out these fields if you intend to generate HTML documentation or publish
 # your project to the Hex package manager.

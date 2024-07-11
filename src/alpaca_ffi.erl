@@ -1,4 +1,4 @@
--module(elephant_ffi).
+-module(alpaca_ffi).
 -compile([no_auto_import]).
 
 -export([persist/2]).

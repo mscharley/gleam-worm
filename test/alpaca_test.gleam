@@ -1,4 +1,4 @@
-import elephant
+import alpaca
 import gleam/int
 import gleeunit
 import gleeunit/should
@@ -12,7 +12,7 @@ fn random_int() {
 }
 
 fn cached_int() {
-  use <- elephant.persist("random_int")
+  use <- alpaca.persist("random_int")
   random_int()
 }
 

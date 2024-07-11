@@ -1,21 +1,21 @@
-# elephant
+# alpaca
 
-[![Package Version](https://img.shields.io/hexpm/v/elephant)](https://hex.pm/packages/elephant)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/elephant/)
+[![Package Version](https://img.shields.io/hexpm/v/alpaca)](https://hex.pm/packages/alpaca)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/alpaca/)
 
 ```sh
-gleam add elephant
+gleam add alpaca
 ```
 ```gleam
 import gleam/regex
-import elephant
+import alpaca
 
 pub type RegexCache {
   RegexCache(greeting: regex.Regex, name: regex.Regex)
 }
 
 fn regexes() -> RegexCache {
-  use <- elephant.persist("my_app")
+  use <- alpaca.persist("my_app")
   RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
 }
 
@@ -30,13 +30,6 @@ While this library was initial concieved of as a cache for regex compilation, it
 
 If you are using this in a library then it is recommended to stick to one big cache for your library wherever possible. The [`persistent_term`][persistent_term] package used to facilitate the cache on the Erlang target gets slower the more individual terms are stored. Hence, a single large object stored in a single term and destructured in Gleam is the preferred approach as much as reasonable.
 
-API documentation can be found at <https://hexdocs.pm/elephant>.
+API documentation can be found at <https://hexdocs.pm/alpaca>.
 
 [persistent_term]: https://www.erlang.org/doc/apps/erts/persistent_term.html
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-```
