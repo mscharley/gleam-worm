@@ -8,10 +8,10 @@
 //// ## Limitations
 ////
 //// * There is intentionally no way to flush the cache and any data stored in the cache is stored in memory in
-////   a way that will never be garbage collected. Writing to the cache triggers a global GC pass and hence
-////   is a very expensive operation.
+////   a way that will never be garbage collected. Updating or removing cache elements would trigger a global
+////   GC pass and hence would be a very expensive operation.
 ////
-////   If you are using alpaca in a library then it is recommended to stick to one big cache for your library
+//// * If you are using alpaca in a library then it is recommended to stick to one big cache for your library
 ////   wherever possible. The [`persistent_term`](https://www.erlang.org/doc/apps/erts/persistent_term.html)
 ////   package used to facilitate the cache on the Erlang target gets slower the more individual terms are
 ////   stored. Hence, a single large object stored in a single term and destructured in Gleam is the preferred
