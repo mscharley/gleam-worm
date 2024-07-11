@@ -1,7 +1,7 @@
+import elephant
 import gleam/int
 import gleeunit
 import gleeunit/should
-import glonstant
 
 pub fn main() {
   gleeunit.main()
@@ -12,7 +12,7 @@ fn random_int() {
 }
 
 fn cached_int() {
-  use <- glonstant.persist("random_int")
+  use <- elephant.persist("random_int")
   random_int()
 }
 

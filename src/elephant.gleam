@@ -9,10 +9,10 @@
 /// }
 ///
 /// fn regexes() -> RegexCache {
-///   use <- glonstant.persist("my_app")
+///   use <- elephant.persist("my_app")
 ///   RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
 /// }
 /// ```
-@external(erlang, "glonstant_ffi", "persist")
-@external(javascript, "./glonstant_ffi.mjs", "persist")
+@external(erlang, "elephant_ffi", "persist")
+@external(javascript, "./elephant_ffi.mjs", "persist")
 pub fn persist(name: String, generator: fn() -> a) -> a

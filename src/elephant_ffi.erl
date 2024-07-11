@@ -1,4 +1,4 @@
--module(glonstant_ffi).
+-module(elephant_ffi).
 -compile([no_auto_import]).
 
 -export([persist/2]).
