@@ -7,8 +7,12 @@ persist(Name, Gen) ->
 	case catch persistent_term:get(Name) of
 		{ 'EXIT', { badarg, _ } } -> 
 			Value = Gen(),
-			persistent_term:put(Name, { ok, Value }),
-			Value;
+			case catch persistent_term:get(Name) of
+				{ 'EXIT', { badarg, _ } } ->
+					persistent_term:put(Name, { ok, Value }),
+					Value;
+				_ -> Value
+			end;
 		{ ok, Value } -> Value
 	end.
 
