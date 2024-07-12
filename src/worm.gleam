@@ -38,7 +38,9 @@
 ///
 /// fn regexes() -> RegexCache {
 ///   use <- worm.persist()
-///   RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
+///   let assert Ok(greeting) = regex.from_string("^\\w+")
+///   let assert Ok(name) = regex.from_string("\\w+$")
+///   RegexCache(greeting, name)
 /// }
 /// ```
 @external(erlang, "worm_ffi", "persist")

@@ -10,19 +10,24 @@ gleam add worm
 import gleam/regex
 import worm
 
-pub type RegexCache {
+type RegexCache {
   RegexCache(greeting: regex.Regex, name: regex.Regex)
 }
 
 fn regexes() -> RegexCache {
   use <- worm.persist()
-  RegexCache(regex.from_string("^\\w+"), regex.from_string("\\w+$"))
+  let assert Ok(greeting) = regex.from_string("^\\w+")
+  let assert Ok(name) = regex.from_string("\\w+$")
+  RegexCache(greeting, name)
 }
 
 pub fn main() {
-  let RegexCache(initial, name) = regexes()
-  "Hello, Gleam!" |> regex.scan(initial) // [Match("Hello, _)]
-  "Hello, Gleam!" |> regex.scan(name) // []
+  let RegexCache(greeting: initial, ..) = regexes()
+
+  "Hello, Gleam!"
+  |> regex.scan(with: initial) // [regex.Match("Hello", [])]
+
+  Nil
 }
 ```
 
