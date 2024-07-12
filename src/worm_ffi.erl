@@ -1,4 +1,4 @@
--module(alpaca_ffi).
+-module(worm_ffi).
 -compile([no_auto_import]).
 
 -export([persist/1]).

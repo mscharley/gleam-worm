@@ -1,7 +1,7 @@
-import alpaca
 import gleam/int
 import gleeunit
 import gleeunit/should
+import worm
 
 pub fn main() {
   gleeunit.main()
@@ -12,7 +12,7 @@ fn random_int() {
 }
 
 fn cached_int() {
-  use <- alpaca.persist()
+  use <- worm.persist()
   random_int()
 }
 
