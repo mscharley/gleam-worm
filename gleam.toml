@@ -1,5 +1,5 @@
 name = "worm"
-version = "1.0.3"
+version = "1.0.4"
 description = "A library for caching deterministic calculations in Gleam"
 licences = ["MIT"]
 repository = { type = "github", user = "mscharley", repo = "gleam-worm" }
