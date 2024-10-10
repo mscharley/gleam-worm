@@ -11,7 +11,8 @@ persist(Gen) ->
 		{ 'EXIT', { badarg, _ } } -> 
 			Value = Gen(),
 			try
-				persistent_term:get(Name)
+				{ ok, Value2 } = persistent_term:get(Name),
+				Value2
 			catch
 				error:badarg:_ ->
 					persistent_term:put(Name, { ok, Value }),
